@@ -2,8 +2,7 @@
 <html>
 	<head>
 		<title>title</title>
-		<link rel="stylesheet" href="css/style.css" />
-		<script src="js/scripst.js"></script>
+		<link rel="stylesheet" href="css/style.css">
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 		<meta name="viewport" content="width = device - width" initial-scale = 1>
 	</head>
@@ -52,7 +51,8 @@
             
             <!-- Додайте інші поля вводу для інших чисел -->
 
-            <input type="submit" id="findButton" value="Знайти Min та Max" onclick="findMinMax()">
+            <!-- <input type="button" id="findButton" value="Знайти Min та Max" onclick= "findMinMax()"> -->
+            <button id="findButton" onclick="findMinMaxFunc(event)">Знайти Min та Max</button>
         </form>
     </div>
 								<div class="main_text2">
@@ -67,9 +67,18 @@
 								</b>
 								</div>
 							</div>
+							<div id="table_container">
+								<p>тут має бути табличка</p>
+								<form>
+									<!-- <label for="rows">Number of Rows:</label> -->
+									<input type="number" id="rows_num" name="rows_num" min="1" required>
+									<button id="table_create" onclick="tableCreate(event)">Створити таблицю</button>
+									<button id="save_table" onclick="table_save(event)">Зберегти таблицю</button>
+								</form>
+							</div>
 						</div>
-						<div class="block5">
-							<div class="contacts">
+						<div class="block5" id="block5">
+							<div class="contacts" id="contacts">
 								<ul>
 									<li>ВНЗ: НТУУ КПІ</li>
 									<li>Факультет: ФІОТ</li>
@@ -78,6 +87,11 @@
 									<li>Контактний номер: +380689ХХХХ65</li>
 								</ul>
 							</div>
+							<form>
+								Зробити текст жирним
+								<input type="checkbox" id="boldCheckbox">
+								<input type="text" id="submitted_text" value="Text" onfocus="updateBoldStyle()">
+							</form>
 						</div>
 					</div>
 				</div>
@@ -88,5 +102,7 @@
 				</div>
 			</div>
 		</div>
+		
 	</body>
+	<script src="js/my_scripst.js"></script>
 </html>
